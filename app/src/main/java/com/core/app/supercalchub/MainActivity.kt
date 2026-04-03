@@ -7,22 +7,28 @@ import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.rememberNavController
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
 import com.core.app.supercalchub.data.AppDatabase
+import com.core.app.supercalchub.features.mathboard.BoardViewModel
+import com.core.app.supercalchub.features.mathboard.WhiteboardScreen
 import com.core.app.supercalchub.ui.navigation.AppNavigation
 import com.core.app.supercalchub.ui.theme.SuperCalcHubTheme
 
 class MainActivity : ComponentActivity() {
     private lateinit var database: AppDatabase
+    private val vm: BoardViewModel by viewModels()
     
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,6 +64,9 @@ class MainActivity : ComponentActivity() {
                         isDarkMode.value = newDarkMode
                     }
                 )
+//                Surface(color = Color.White) {
+//                    WhiteboardScreen(vm) { finish() }
+//                }
             }
         }
     }

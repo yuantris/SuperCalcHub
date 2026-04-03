@@ -120,6 +120,7 @@ fun FunctionPlotScreen(navController: NavController) {
                                 onClick = {
                                     functionExpression = expr
                                     plotView?.setFunction(expr)
+
                                 },
                                 label = { Text(label, fontSize = 12.sp) }
                             )
@@ -146,14 +147,18 @@ fun FunctionPlotScreen(navController: NavController) {
                     .padding(12.dp)
             ) {
                     SmallFloatingActionButton(
-                        onClick = { plotView?.setScale(1.5f) },
+                        onClick = {
+//                            plotView?.setScale(1.5f)
+                                  },
                         modifier = Modifier.padding(4.dp)
                     ) {
                         Text("+", fontSize = 20.sp)
                     }
 
                     SmallFloatingActionButton(
-                        onClick = { plotView?.setScale(0.67f) },
+                        onClick = {
+//                            plotView?.setScale(0.67f)
+                                  },
                         modifier = Modifier.padding(4.dp)
                     ) {
                         Text("-", fontSize = 20.sp)
